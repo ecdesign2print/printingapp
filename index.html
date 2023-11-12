@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/daisyui/3.9.4/full.css" integrity="sha512-m0wcrzjVfGna4wyRnZXRJoxUbACXrRA2UzUS9hsH++kYI6JJjFT2SzKbtTWU8uMlJ+pA3Am3S/qjiHC6FkQCtg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>EC Design 2 Print</title>
 
     <style>
@@ -40,6 +40,7 @@
             }
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 
 <body class="text-gray-600 work-sans leading-normal text-base tracking-normal" style="background-color: #f9f5f1">
@@ -48,11 +49,11 @@
     <nav id="header" class="w-full z-30 top-0 py-1">
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
             <div class="lg:mr-20">
-                <a class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="/">
-                    <img class="lg w-12 h-12" src="img/logo.png">
+                <a class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="#">
+                    <img class="lg w-12 h-12 mx-auto ml-3" src="img/logo.png">
                 </a>
             </div>
-            <label for="menu-toggle" class="cursor-pointer md:hidden block">
+            <label for="menu-toggle" class="cursor-pointer md:hidden block mr-3">
                 <svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                     <title>menu</title>
                     <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
@@ -62,7 +63,7 @@
             <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu">
                 <nav>
                     <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
-                        <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="/">Home</a></li>
+                        <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="#" onclick="window.location.href = window.location.href;">Home</a></li>
                         <li><a id="viewServiceBtnFromNavbar" class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="#">Services</a></li>
                     </ul>
                 </nav>
@@ -86,6 +87,13 @@
                 <div>
                     <p class="tracking-wide no-underline hover:no-underline font-semibold text-gray-800 text-4xl" href="#">Our Services</p>
                 </div>
+            </div>
+
+            <div class="flex justify-center w-full z-30 top-0 px-6 pt-5 mb-10">
+                <span class="bg-yellow-100 text-yellow-800 text-xs lg:text-2xl font-medium px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300 mr-2">Signboard</span>
+                <span class="bg-indigo-100 text-indigo-800 text-xs lg:text-2xl font-medium me-2 px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300 mr-2">Banner</span>
+                <span class="bg-pink-100 text-pink-800 text-xs lg:text-2xl font-medium me-2 px-2.5 py-0.5 rounded dark:bg-pink-900 dark:text-pink-300 mr-2">Sticker</span>
+                <span class="bg-purple-100 text-purple-800 text-xs lg:text-2xl font-medium me-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">Postal</span>
             </div>
 
             <div class="flex justify-center w-full z-30 top-0 px-6 pt-5 mb-24">
@@ -117,9 +125,29 @@
     <section id="serviceSection" class="py-5" style="background-color: #f9f5f1">
         <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
             
-            <div class="w-full z-30 top-0 px-6 py-1 servicesContainer">
+            <!-- <div class="w-full z-30 top-0 px-6 py-1 servicesContainer">
                 <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
                     <p class="uppercase font-bold text-gray-800 text-xl" href="#">Poster / Sticker / Flyer / Foam</p>
+                </div>
+            </div>
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
+                <img class="hover:grow hover:shadow-lg" src="img/flyer.jpg">
+            </div>
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
+                <img class="hover:grow hover:shadow-lg" src="img/flyer2.jpg">
+            </div>
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
+                <img class="hover:grow hover:shadow-lg" src="img/sticker1.jpg">
+            </div>
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
+                <img class="hover:grow hover:shadow-lg" src="img/sticker3.jpg">
+            </div> -->
+
+            <!-- ----------------------------------------------------------- Poster / Sticker / Flyer / Foam ----------------------------------------------------------------------- -->
+
+            <div class="w-full z-30 top-0 px-6 py-1 servicesContainer">
+                <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
+                    <p class="uppercase font-bold text-gray-800 text-xl" href="#">POSTER / STICKER / FLYER / FOAM</p>
                 </div>
             </div>
             <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
@@ -136,27 +164,11 @@
             </div>
             <hr class="mt-3" style="width:100%;text-align:left;margin-left:0; border-color:#202120;">
 
-            
-            <div class="w-full z-30 top-0 px-6 py-1 servicesContainer">
-                <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
-                    <p class="uppercase font-bold text-gray-800 text-xl lg:text-center" href="#">Menu</p>
-                </div>
-            </div>
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                <img class="hover:grow hover:shadow-lg" src="img/sticker2.jpg">
-            </div>
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                <img class="hover:grow hover:shadow-lg" src="img/menu1.jpg">
-            </div>
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                <img class="hover:grow hover:shadow-lg" src="img/menu2.jpg">
-            </div>
-            <hr class="mt-3" style="width:100%;text-align:left;margin-left:0; border-color:#202120;">
+            <!-- ----------------------------------------------------------- BANNERS ----------------------------------------------------------------------- -->
 
-            
             <div class="w-full z-30 top-0 px-6 py-1 servicesContainer">
                 <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
-                    <p class="uppercase font-bold text-gray-800 text-xl lg:text-center" href="#">Banners</p>
+                    <p class="uppercase font-bold text-gray-800 text-xl lg:text-center" href="#">BANNERS</p>
                 </div>
             </div>
             <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
@@ -166,21 +178,95 @@
                 <img class="hover:grow hover:shadow-lg" src="img/banner2.jpg">
             </div>
             <hr class="mt-3" style="width:100%;text-align:left;margin-left:0; border-color:#202120;">
-
             
-            <div class="w-full z-30 top-0 px-6 py-1 servicesContainer">
-                <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
-                    <p class="uppercas font-bold text-gray-800 text-xl lg:text-center" href="#">T-Shirt / Signboard / Namecard</p>
+            <!-- ----------------------------------------------------------- MENU ----------------------------------------------------------------------- -->
+
+            <div x-data="{ dropdownOpen: true }" class="relative w-full z-30 top-0 px-6 py-1 servicesContainer">
+                <div class="flex flex-col mt-0 px-2 py-3">
+                    <p 
+                        @click="dropdownOpen = !dropdownOpen" 
+                        class="uppercase font-bold text-gray-800 text-xl flex flex-row" 
+                        href="#">
+                            Menu
+                            <svg class="h-5 w-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                            fill="currentColor"><path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10
+                                10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" /></svg>
+                    </p>
+                </div>
+    
+                <div x-show="dropdownOpen" x-on:click.stop.outside="open = false" class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
+                    <div class="w-full md:w-1/3 xl:w-1/4 servicesContainer">
+                        <img class="hover:grow hover:shadow-lg" src="img/sticker2.jpg">
+                    </div>
+                    <div class="w-full md:w-1/3 xl:w-1/4 servicesContainer">
+                        <img class="hover:grow hover:shadow-lg" src="img/menu1.jpg">
+                    </div>
+                    <div class="w-full md:w-1/3 xl:w-1/4 flex flex-col servicesContainer">
+                        <img class="hover:grow hover:shadow-lg" src="img/menu2.jpg">
+                    </div>
                 </div>
             </div>
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                <img class="hover:grow hover:shadow-lg" src="img/shirt.jpg">
+            <hr class="mt-3" style="width:100%;text-align:left;margin-left:0; border-color:#202120;">
+
+
+            <!-- ----------------------------------------------------------- T-SHIRT / SIGNBOARD NAMECARD ----------------------------------------------------------------------- -->
+
+            <div x-data="{ dropdownOpen: true }" class="relative w-full z-30 top-0 px-6 py-1 servicesContainer">
+                <div class="flex flex-col mt-0 px-2 py-3">
+                    <p 
+                        @click="dropdownOpen = !dropdownOpen" 
+                        class="uppercase font-bold text-gray-800 text-xl flex flex-row" 
+                        href="#">
+                            T-SHIRT / SIGNBOARD NAMECARD
+                            <svg class="h-5 w-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                            fill="currentColor"><path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10
+                                10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" /></svg>
+                    </p>
+                </div>
+    
+                <div x-show="dropdownOpen" x-on:click.stop.outside="open = false" class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
+                    <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
+                        <img class="hover:grow hover:shadow-lg" src="img/shirt.jpg">
+                    </div>
+                    <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
+                        <img class="hover:grow hover:shadow-lg" src="img/signboard.jpg">
+                    </div>
+                    <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
+                        <img class="hover:grow hover:shadow-lg" src="img/namecard.jpg">
+                    </div>
+                </div>
             </div>
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                <img class="hover:grow hover:shadow-lg" src="img/signboard.jpg">
-            </div>
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                <img class="hover:grow hover:shadow-lg" src="img/namecard.jpg">
+            <hr class="mt-3" style="width:100%;text-align:left;margin-left:0; border-color:#202120;">
+
+            <!-- ----------------------------------------------------------- T-SHIRT / SIGNBOARD NAMECARD ----------------------------------------------------------------------- -->
+
+            <div x-data="{ dropdownOpen: true }" class="relative w-full z-30 top-0 px-6 py-1 servicesContainer">
+                <div class="flex flex-col mt-0 px-2 py-3">
+                    <p 
+                        @click="dropdownOpen = !dropdownOpen" 
+                        class="uppercase font-bold text-gray-800 text-xl flex flex-row" 
+                        href="#">
+                            WALLDROP / ROLLUP
+                            <svg class="h-5 w-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                            fill="currentColor"><path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10
+                                10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" /></svg>
+                    </p>
+                </div>
+    
+                <div x-show="dropdownOpen" x-on:click.stop.outside="open = false" class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
+                    <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
+                        <img class="hover:grow hover:shadow-lg" src="img/walldrop.jpg">
+                    </div>
+                    <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
+                        <img class="hover:grow hover:shadow-lg" src="img/rollup.jpg">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
