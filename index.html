@@ -39,6 +39,22 @@
                 justify-content: center; 
             }
         }
+
+        @media (max-width: 768px) {
+            .flex-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .top-spans {
+                order: 1; /* Places the top spans first */
+            }
+
+            .bottom-spans {
+                order: 2; /* Places the bottom spans second */
+            }
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
@@ -63,7 +79,6 @@
             <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu">
                 <nav>
                     <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
-                        <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="#" onclick="window.location.href = window.location.href;">Home</a></li>
                         <li><a id="viewServiceBtnFromNavbar" class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="#">Services</a></li>
                     </ul>
                 </nav>
@@ -72,6 +87,7 @@
         </div>
     </nav>
 
+    <!-- ----------------------------------------------------------- Header ----------------------------------------------------------------------- -->
     <div class="flex flex-col justify-center container mx-auto mt-5 h-96">
         <div class="flex flex-row justify-center">
             <p class="text-3xl lg:text-5xl font-bold mb-3 text-center">Providing you with Excellent Design, Printing Solutions</p>
@@ -81,24 +97,26 @@
         </div>
     </div>
 
+    <!-- ----------------------------------------------------------- About Us ----------------------------------------------------------------------- -->
     <section class="py-10" style="background-color: #DDD0C8">
         <div class="container mx-auto flex flex-col md:flex-row justify-center items-center flex-wrap pt-4">
-            <div class="w-1/2 mx-auto flex-wrap">
-                <video width="640" height="200" controls class="md:my-0 px-3 md:px-0">
+            <div class="w-full md:w-1/2 mx-auto flex-wrap md:my-0 px-10 md:px-0">
+                <video width="640" height="200" controls>
                     <source src="vid/vid3.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
-            <div class="w-1/2 mx-auto flex-wrap">
+            <div class="w-full md:w-1/2 mx-auto flex-wrap mt-10 md:mt-0 md:my-0 px-10 md:px-0">
                 <div>
                     <p class="tracking-wide no-underline hover:no-underline font-semibold text-gray-800 text-4xl" href="#">About Us</p>
-                    <p class="pt-5">At ECDesign2Print, we are passionate about transforming your ideas into vibrant prints and bringing your visions to life. As a leading provider of printing solutions, we specialize in delivering top-notch services tailored to meet your diverse needs.</p>
+                    <p class="pt-5">At <b>ECDesign2Print</b>, we are passionate about transforming your ideas into vibrant prints and bringing your visions to life. As a leading provider of printing solutions, we specialize in delivering top-notch services tailored to meet your diverse needs.</p>
                     <p class="pt-5">Your satisfaction is our priority. We are committed to not only meeting but exceeding your expectations, ensuring a seamless and enjoyable experience throughout your printing journey with us.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ----------------------------------------------------------- Our Services ----------------------------------------------------------------------- -->
     <section class="pt-5" style="background-color: #f9f5f1">
         <div class="container mx-auto flex items-center flex-wrap pt-4">
             <div class="flex justify-center w-full z-30 top-0 px-6 py-1 mb-5">
@@ -107,11 +125,15 @@
                 </div>
             </div>
 
-            <div class="flex justify-center w-full z-30 top-0 px-6 pt-5 mb-10">
-                <span class="bg-yellow-100 text-yellow-800 text-xs lg:text-2xl font-medium px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300 mr-2">Signboard</span>
-                <span class="bg-indigo-100 text-indigo-800 text-xs lg:text-2xl font-medium me-2 px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300 mr-2">Banner</span>
-                <span class="bg-pink-100 text-pink-800 text-xs lg:text-2xl font-medium me-2 px-2.5 py-0.5 rounded dark:bg-pink-900 dark:text-pink-300 mr-2">Sticker</span>
-                <span class="bg-purple-100 text-purple-800 text-xs lg:text-2xl font-medium me-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">Postal</span>
+            <div class="flex justify-center w-full z-30 top-0 px-6 pt-5 mb-10 flex-container">
+                <div class="top-spans">
+                    <span class="bg-yellow-100 text-yellow-800 text-2xl font-black px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300 mr-2 mb-2">Signboard</span>
+                    <span class="bg-indigo-100 text-indigo-800 text-2xl font-black me-2 px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300 mr-2 mb-2">Banner</span>
+                </div>
+                <div class="bottom-spans mt-2 md:mt-0">
+                    <span class="bg-pink-100 text-pink-800 text-2xl font-black me-2 px-7 md:px-2.5 py-0.5 rounded dark:bg-pink-900 dark:text-pink-300 mr-2 mb-2">Sticker</span>
+                    <span class="bg-purple-100 text-purple-800 text-2xl font-black me-2 px-4 md:px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">Postal</span>
+                </div>
             </div>
 
             <div class="flex justify-center w-full z-30 top-0 px-6 pt-5 mb-24">
@@ -119,7 +141,7 @@
                     <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600 font-semibold">Rubber Stamp</li>
                     <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600 font-semibold">Invitation Card</li>
                     <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600 font-semibold">Cash Bills</li>
-                    <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600 font-semibold">Comb</li>
+                    <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600 font-semibold">Comb Binding</li>
                     <li class="w-full px-4 py-2 rounded-b-lg font-semibold">Letterhead</li>
                 </ul>
                 <ul class="w-48 text-base font-medium text-gray-900 bg-base border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white lg:mx-16 md:mx-3 sm:mx-3">
@@ -140,6 +162,7 @@
         </div>
     </section>
 
+    <!-- ----------------------------------------------------------- Printing Process ----------------------------------------------------------------------- -->
     <section class="py-10" style="background-color: #DDD0C8">
         <div class="container mx-auto flex items-center flex-wrap">
             <div class="flex justify-center w-full z-30 top-0 px-6 py-1 mb-5">
@@ -165,59 +188,96 @@
         <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
 
             <!-- ----------------------------------------------------------- Poster / Sticker / Flyer / Foam ----------------------------------------------------------------------- -->
-            <div class="w-full z-30 top-0 px-6 py-1 servicesContainer">
-                <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
-                    <p class="uppercase font-bold text-gray-800 text-xl" href="#">POSTER / STICKER / FLYER / FOAM</p>
+            <div x-data="{ dropdownOpen: true }" class="relative w-full z-30 top-0 px-6 py-1">
+                <div class="flex flex-col mt-0 px-2 py-3">
+                    <p 
+                        @click="dropdownOpen = !dropdownOpen" 
+                        class="uppercase font-bold text-gray-800 text-xl flex flex-row justify-between md:justify-start" 
+                        href="#"
+                    >
+                        Poster / Sticker / Flyer / Foam
+                        <svg class="h-5 w-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </p>
                 </div>
-            </div>
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                <img class="hover:grow hover:shadow-lg" src="img/flyer.jpg">
-            </div>
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                <img class="hover:grow hover:shadow-lg" src="img/flyer2.jpg">
-            </div>
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                <img class="hover:grow hover:shadow-lg" src="img/sticker1.jpg">
-            </div>
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                <img class="hover:grow hover:shadow-lg" src="img/sticker3.jpg">
+                <div x-show="dropdownOpen" x-on:click.stop.outside="open = false" class="flex flex-col servicesContainer">
+                    <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
+                            <img class="hover:grow hover:shadow-lg" src="img/flyer.jpg">
+                        </div>
+                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
+                            <img class="hover:grow hover:shadow-lg" src="img/flyer2.jpg">
+                        </div>
+                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
+                            <img class="hover:grow hover:shadow-lg" src="img/flyer3.jpg">
+                        </div>
+                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
+                            <img class="hover:grow hover:shadow-lg" src="img/flyer4.jpg">
+                        </div>
+                    </div>
+        
+                    <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
+                            <img class="hover:grow hover:shadow-lg" src="img/sticker1.jpg">
+                        </div>
+                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
+                            <img class="hover:grow hover:shadow-lg" src="img/sticker3.jpg">
+                        </div>
+                    </div>
+                </div>
             </div>
             <hr class="mt-3" style="width:100%;text-align:left;margin-left:0; border-color:#202120;">
 
             <!-- ----------------------------------------------------------- BANNERS ----------------------------------------------------------------------- -->
-            <div class="w-full z-30 top-0 px-6 py-1 servicesContainer">
-                <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
-                    <p class="uppercase font-bold text-gray-800 text-xl lg:text-center" href="#">BANNERS</p>
+            <div x-data="{ dropdownOpen: true }" class="relative w-full z-30 top-0 px-6 py-1">
+                <div class="flex flex-col mt-0 px-2 py-3">
+                    <p 
+                        @click="dropdownOpen = !dropdownOpen" 
+                        class="uppercase font-bold text-gray-800 text-xl flex flex-row justify-between md:justify-start" 
+                        href="#"
+                    >
+                        BANNERS
+                        <svg class="h-5 w-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </p>
                 </div>
-            </div>
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                <img class="hover:grow hover:shadow-lg" src="img/banner1.jpg">
-            </div>
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                <img class="hover:grow hover:shadow-lg" src="img/banner2.jpg">
-            </div>
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                <img class="hover:grow hover:shadow-lg" src="img/banner3.jpg">
+                <div x-show="dropdownOpen" x-on:click.stop.outside="open = false" class="flex flex-col servicesContainer">
+                    <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
+                            <img class="hover:grow hover:shadow-lg" src="img/banner1.jpg">
+                        </div>
+                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
+                            <img class="hover:grow hover:shadow-lg" src="img/banner2.jpg">
+                        </div>
+                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
+                            <img class="hover:grow hover:shadow-lg" src="img/banner3.jpg">
+                        </div>
+                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
+                            <img class="hover:grow hover:shadow-lg" src="img/banner4.jpg">
+                        </div>
+                    </div>
+                </div>
             </div>
             <hr class="mt-3" style="width:100%;text-align:left;margin-left:0; border-color:#202120;">
             
             <!-- ----------------------------------------------------------- MENU ----------------------------------------------------------------------- -->
-            <div x-data="{ dropdownOpen: true }" class="relative w-full z-30 top-0 px-6 py-1 servicesContainer">
+            <div x-data="{ dropdownOpen: true }" class="relative w-full z-30 top-0 px-6 py-1">
                 <div class="flex flex-col mt-0 px-2 py-3">
                     <p 
                         @click="dropdownOpen = !dropdownOpen" 
-                        class="uppercase font-bold text-gray-800 text-xl flex flex-row" 
-                        href="#">
-                            Menu
-                            <svg class="h-5 w-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                            fill="currentColor"><path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10
-                                10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd" /></svg>
+                        class="uppercase font-bold text-gray-800 text-xl flex flex-row justify-between md:justify-start" 
+                        href="#"
+                    >
+                        MENU
+                        <svg class="h-5 w-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
                     </p>
                 </div>
     
-                <div x-show="dropdownOpen" x-on:click.stop.outside="open = false" class="flex flex-col">
+                <div x-show="dropdownOpen" x-on:click.stop.outside="open = false" class="flex flex-col servicesContainer">
                     <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
                         <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
                             <img class="hover:grow hover:shadow-lg" src="img/sticker2.jpg">
@@ -240,28 +300,72 @@
                         <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
                             <img class="hover:grow hover:shadow-lg" src="img/menu5.jpg">
                         </div>
+                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
+                            <img class="hover:grow hover:shadow-lg" src="img/menu6.jpg">
+                        </div>
+                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
+                            <img class="hover:grow hover:shadow-lg" src="img/menu7.jpg">
+                        </div>
+                    </div>
+
+                    <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
+                            <img class="hover:grow hover:shadow-lg" src="img/menu8.jpg">
+                        </div>
+                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
+                            <img class="hover:grow hover:shadow-lg" src="img/menu9.jpg">
+                        </div>
                     </div>
                 </div>
             </div>
             <hr class="mt-3" style="width:100%;text-align:left;margin-left:0; border-color:#202120;">
 
-            <!-- ----------------------------------------------------------- T-SHIRT / SIGNBOARD NAMECARD ----------------------------------------------------------------------- -->
-            <div x-data="{ dropdownOpen: true }" class="relative w-full z-30 top-0 px-6 py-1 servicesContainer">
+            <!-- ----------------------------------------------------------- T-SHIRT / SIGNBOARD / NAMECARD ----------------------------------------------------------------------- -->
+            <div x-data="{ dropdownOpen: true }" class="relative w-full z-30 top-0 px-6 py-1">
                 <div class="flex flex-col mt-0 px-2 py-3">
                     <p 
                         @click="dropdownOpen = !dropdownOpen" 
-                        class="uppercase font-bold text-gray-800 text-xl flex flex-row" 
-                        href="#">
-                            T-SHIRT / SIGNBOARD / NAMECARD
-                            <svg class="h-5 w-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                            fill="currentColor"><path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10
-                                10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd" /></svg>
+                        class="uppercase font-bold text-gray-800 text-xl flex flex-row justify-between md:justify-start" 
+                        href="#"
+                    >
+                        T-SHIRT / SIGNBOARD / NAMECARD
+                        <svg class="h-5 w-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
                     </p>
                 </div>
     
-                <div x-show="dropdownOpen" x-on:click.stop.outside="open = false" class="flex flex-col">
+                <div x-show="dropdownOpen" x-on:click.stop.outside="open = false" class="flex flex-col servicesContainer">
+                    <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
+                            <img class="hover:grow hover:shadow-lg" src="img/signboard.jpg">
+                        </div>
+                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
+                            <img class="hover:grow hover:shadow-lg" src="img/signboard2.jpg">
+                        </div>
+                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
+                            <img class="hover:grow hover:shadow-lg" src="img/signboard3.jpg">
+                        </div>
+                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
+                            <img class="hover:grow hover:shadow-lg" src="img/signboard4.jpg">
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
+                            <img class="hover:grow hover:shadow-lg" src="img/signboard5.jpg">
+                        </div>
+                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
+                            <img class="hover:grow hover:shadow-lg" src="img/signboard6.jpg">
+                        </div>
+                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
+                            <img class="hover:grow hover:shadow-lg" src="img/signboard7.jpg">
+                        </div>
+                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
+                            <img class="hover:grow hover:shadow-lg" src="img/signboard8.jpg">
+                        </div>
+                    </div>
+                    
                     <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
                         <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
                             <img class="hover:grow hover:shadow-lg" src="img/shirt.jpg">
@@ -270,59 +374,58 @@
                             <img class="hover:grow hover:shadow-lg" src="img/namecard.jpg">
                         </div>
                         <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/signboard.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/signboard2.jpg">
-                        </div>
-                    </div>
-
-                    <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/signboard3.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/signboard4.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/signboard5.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/signboard6.jpg">
-                        </div>
-                    </div>
-                    
-                    <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/signboard7.jpg">
+                            <img class="hover:grow hover:shadow-lg" src="img/namecard2.jpg">
                         </div>
                     </div>
                 </div>
             </div>
             <hr class="mt-3" style="width:100%;text-align:left;margin-left:0; border-color:#202120;">
 
-            <!-- ----------------------------------------------------------- T-SHIRT / SIGNBOARD NAMECARD ----------------------------------------------------------------------- -->
-            <div x-data="{ dropdownOpen: true }" class="relative w-full z-30 top-0 px-6 py-1 servicesContainer">
+            <!-- ----------------------------------------------------------- WALLDROP / ROLLUP ----------------------------------------------------------------------- -->
+            <div x-data="{ dropdownOpen: true }" class="relative w-full z-30 top-0 px-6 py-1">
                 <div class="flex flex-col mt-0 px-2 py-3">
                     <p 
                         @click="dropdownOpen = !dropdownOpen" 
-                        class="uppercase font-bold text-gray-800 text-xl flex flex-row" 
-                        href="#">
-                            WALLDROP / ROLLUP
-                            <svg class="h-5 w-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                            fill="currentColor"><path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10
-                                10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd" /></svg>
+                        class="uppercase font-bold text-gray-800 text-xl flex flex-row justify-between md:justify-start" 
+                        href="#"
+                    >
+                        WALLDROP / ROLLUP
+                        <svg class="h-5 w-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
                     </p>
                 </div>
     
-                <div x-show="dropdownOpen" x-on:click.stop.outside="open = false" class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
+                <div x-show="dropdownOpen" x-on:click.stop.outside="open = false" class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row servicesContainer">
                     <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
                         <img class="hover:grow hover:shadow-lg" src="img/walldrop.jpg">
                     </div>
                     <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
                         <img class="hover:grow hover:shadow-lg" src="img/rollup.jpg">
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-3" style="width:100%;text-align:left;margin-left:0; border-color:#202120;">
+
+            <!-- ----------------------------------------------------------- VOUCHER ----------------------------------------------------------------------- -->
+            <div x-data="{ dropdownOpen: true }" class="relative w-full z-30 top-0 px-6 py-1">
+                <div class="flex flex-col mt-0 px-2 py-3">
+                    <p 
+                        @click="dropdownOpen = !dropdownOpen" 
+                        class="uppercase font-bold text-gray-800 text-xl flex flex-row justify-between md:justify-start" 
+                        href="#"
+                    >
+                        VOUCHER
+                        <svg class="h-5 w-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </p>
+                </div>
+                <div x-show="dropdownOpen" x-on:click.stop.outside="open = false" class="flex flex-col servicesContainer">
+                    <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
+                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
+                            <img class="hover:grow hover:shadow-lg" src="img/voucher.jpg">
+                        </div>
                     </div>
                 </div>
             </div>
