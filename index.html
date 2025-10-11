@@ -2,603 +2,516 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Free open source Tailwind CSS Store template">
-    <meta name="keywords" content="tailwind,tailwindcss,tailwind css,css,starter template,free template,store template, shop layout, minimal, monochrome, minimalistic, theme, nordic">
-    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/daisyui/3.9.4/full.css" integrity="sha512-m0wcrzjVfGna4wyRnZXRJoxUbACXrRA2UzUS9hsH++kYI6JJjFT2SzKbtTWU8uMlJ+pA3Am3S/qjiHC6FkQCtg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>EC Design 2 Print</title>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <style>
-        .work-sans {
-            font-family: 'Work Sans', sans-serif;
+        html {
+            scroll-behavior: smooth;
         }
-                
-        #menu-toggle:checked + #menu {
-            display: block;
-        }
-        
-        .hover\:grow {
-            transition: all 0.3s;
-            transform: scale(1);
-        }
-        
-        .hover\:grow:hover {
-            transform: scale(1.02);
-        }
-
-        @media (max-width: 768px) {
-            .servicesContainer {
-                display: flex;
-                flex-direction: column; 
-                align-items: center; 
-                justify-content: center; 
-            }
-        }
-
-        @media (max-width: 768px) {
-            .flex-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .top-spans {
-                order: 1; /* Places the top spans first */
-            }
-
-            .bottom-spans {
-                order: 2; /* Places the bottom spans second */
-            }
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
-
-<body class="text-gray-600 work-sans leading-normal text-base tracking-normal" style="background-color: #f9f5f1">
-
-    <!--Nav-->
-    <nav id="header" class="w-full z-30 top-0 py-1">
-        <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
-            <div class="lg:mr-20">
-                <a class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="#">
-                    <img class="lg w-12 h-12 mx-auto ml-3" src="img/logo.png">
-                </a>
-            </div>
-            <label for="menu-toggle" class="cursor-pointer md:hidden block mr-3">
-                <svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                    <title>menu</title>
-                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-                </svg>
-            </label>
-            <input class="hidden" type="checkbox" id="menu-toggle"/>
-            <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu">
-                <nav>
-                    <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
-                        <li><a id="viewServiceBtnFromNavbar" class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="#">Services</a></li>
-                    </ul>
-                </nav>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg fixed w-full z-50 top-0">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo + Title -->
+            <div class="flex items-center space-x-2">
+                <img src="img/logo.png" alt="ECDesign2Print Logo" class="h-12 w-auto">
+                <h5 class="text-2xl font-bold">EC Design 2 Print</h5>
             </div>
             
+            <!-- Navigation Links -->
+            <div class="space-x-4">
+                <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium">Our Services</a>
+            </div>
         </div>
     </nav>
 
-    <!-- ----------------------------------------------------------- Header ----------------------------------------------------------------------- -->
-    <div class="flex flex-col justify-center container mx-auto mt-5 h-96">
-        <div class="flex flex-row justify-center">
-            <p class="text-3xl lg:text-5xl font-bold mb-3 text-center">Providing you with Excellent Design, Printing Solutions</p>
-        </div>
-        <div class="flex justify-center mt-10">
-            <button id="viewServiceBtn" class="bg-black hover:bg-blue-700 text-white font-bold py-2 px-4 w-40 rounded-full">VIEW SERVICES</button>
-        </div>
-    </div>
-
-    <!-- ----------------------------------------------------------- About Us ----------------------------------------------------------------------- -->
-    <section class="py-10" style="background-color: #DDD0C8">
-        <div class="container mx-auto flex flex-col md:flex-row justify-center items-center flex-wrap pt-4">
-            <div class="w-full md:w-1/2 mx-auto flex-wrap md:my-0 px-10 md:px-0">
-                <video width="640" height="200" controls>
-                    <source src="vid/vid3.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="w-full md:w-1/2 mx-auto flex-wrap mt-10 md:mt-0 md:my-0 px-10 md:px-0">
-                <div>
-                    <p class="tracking-wide no-underline hover:no-underline font-semibold text-gray-800 text-4xl" href="#">About Us</p>
-                    <p class="pt-5">At <b>ECDesign2Print</b>, we are passionate about transforming your ideas into vibrant prints and bringing your visions to life. As a leading provider of printing solutions, we specialize in delivering top-notch services tailored to meet your diverse needs.</p>
-                    <p class="pt-5">Your satisfaction is our priority. We are committed to not only meeting but exceeding your expectations, ensuring a seamless and enjoyable experience throughout your printing journey with us.</p>
-                </div>
-            </div>
-        </div>
+    <!-- Hero Section -->
+    <section class="bg-blue-600 text-white text-center py-32 pt-32">
+        <h2 class="text-4xl font-bold mb-6">Welcome to Our Services</h2>
+        <p class="text-lg mb-8">Providing you with Excellent Design, Printing Solutions</p>
+        <a href="#services"
+            class="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg hover:bg-blue-100 transition">VIEW
+            SERVICES</a>
     </section>
 
-    <!-- ----------------------------------------------------------- Our Services ----------------------------------------------------------------------- -->
-    <section class="pt-5" style="background-color: #f9f5f1">
-        <div class="container mx-auto flex items-center flex-wrap pt-4">
-            <div class="flex justify-center w-full z-30 top-0 px-6 py-1 mb-5">
-                <div>
-                    <p class="tracking-wide no-underline hover:no-underline font-semibold text-gray-800 text-4xl" href="#">Our Services</p>
-                </div>
-            </div>
-
-            <div class="flex justify-center w-full z-30 top-0 px-6 pt-5 mb-10 flex-container">
-                <div class="top-spans">
-                    <span class="bg-yellow-100 text-yellow-800 text-2xl font-black px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300 mr-2 mb-2">Signboard</span>
-                    <span class="bg-indigo-100 text-indigo-800 text-2xl font-black me-2 px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300 mr-2 mb-2">Banner</span>
-                </div>
-                <div class="bottom-spans mt-2 md:mt-0">
-                    <span class="bg-pink-100 text-pink-800 text-2xl font-black me-2 px-7 md:px-2.5 py-0.5 rounded dark:bg-pink-900 dark:text-pink-300 mr-2 mb-2">Sticker</span>
-                    <span class="bg-purple-100 text-purple-800 text-2xl font-black me-2 px-4 md:px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">Postal</span>
-                </div>
-            </div>
-
-            <div class="flex justify-center w-full z-30 top-0 px-6 pt-5 mb-24">
-                <ul class="w-48 text-base font-medium text-gray-900 bg-base border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                    <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600 font-semibold">Rubber Stamp</li>
-                    <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600 font-semibold">Invitation Card</li>
-                    <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600 font-semibold">Cash Bills</li>
-                    <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600 font-semibold">Comb Binding</li>
-                    <li class="w-full px-4 py-2 rounded-b-lg font-semibold">Letterhead</li>
-                </ul>
-                <ul class="w-48 text-base font-medium text-gray-900 bg-base border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white lg:mx-16 md:mx-3 sm:mx-3">
-                    <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600 font-semibold">Nametag</li>
-                    <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600 font-semibold">Uniform</li>
-                    <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600 font-semibold">Laminate</li>
-                    <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600 font-semibold">Staple</li>
-                    <li class="w-full px-4 py-2 rounded-b-lg font-semibold">Perfect Binding</li>
-                </ul>
-                <ul class="w-48 text-base font-medium text-gray-900 bg-base border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                    <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600 font-semibold">Paper Bag</li>
-                    <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600 font-semibold">Envelope</li>
-                    <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600 font-semibold">Hard Cover</li>
-                    <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600 font-semibold">Sticker</li>
-                    <li class="w-full px-4 py-2 rounded-b-lg font-semibold">Photostat</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- ----------------------------------------------------------- Printing Process ----------------------------------------------------------------------- -->
-    <section class="py-10" style="background-color: #DDD0C8">
-        <div class="container mx-auto flex items-center flex-wrap">
-            <div class="flex justify-center w-full z-30 top-0 px-6 py-1 mb-5">
-                <div>
-                    <p class="tracking-wide no-underline hover:no-underline font-semibold text-gray-800 text-4xl" href="#">Our Printing Process</p>
-                </div>
-            </div>
-    
-            <div class="container mx-auto flex items-center justify-center flex-wrap">
-                <video width="640" height="200" controls class="my-3 md:my-0 px-3 md:px-0">
-                    <source src="vid/vid1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-    </section>
-
-    <section id="serviceSection" class="py-5" style="background-color: #f9f5f1">
-        <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
-
-            <!-- ----------------------------------------------------------- Poster / Sticker / Flyer / Foam ----------------------------------------------------------------------- -->
-            <div x-data="{ dropdownOpen: true }" class="relative w-full z-30 top-0 px-6 py-1">
-                <div class="flex flex-col mt-0 px-2 py-3">
-                    <p 
-                        @click="dropdownOpen = !dropdownOpen" 
-                        class="uppercase font-bold text-gray-800 text-xl flex flex-row justify-between md:justify-start" 
-                        href="#"
-                    >
-                        Poster / Sticker / Flyer / Foam
-                        <svg class="h-5 w-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                    </p>
-                </div>
-                <div x-show="dropdownOpen" x-on:click.stop.outside="open = false" class="flex flex-col servicesContainer">
-                    <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/flyer.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/flyer2.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/flyer3.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/sticker1.jpg">
-                        </div>
-                    </div>
+    <!-- Services Section -->
+    <section id="services" class="container mx-auto px-4 py-16" x-data="{ 
+        activeCategory: 'banners',
+        open: false,
+        imgSrc: '',
+        categories: {
+            banners: {
+                title: 'Banners',
+                services: [
+                    { title: 'Banner', img: 'img/banner1.jpg', description: 'High-impact banner design for events and promotions.' },
+                    { title: 'Banner', img: 'img/banner2.jpg', description: 'Professional banner solutions for indoor or outdoor use.' },
+                    { title: 'Banner', img: 'img/banner3.jpg', description: 'Eye-catching visuals perfect for retail or trade shows.' },
+                    { title: 'Banner', img: 'img/banner4.jpg', description: 'Sleek, modern banner design for branding and advertising.' }
+                ]
+            },
+            sticker: {
+                title: 'Sticker',
+                services: [
+                    { title: 'Sticker', img: 'img/sticker1.jpg', description: 'Custom-designed stickers to enhance brand visibility.' },
+                    { title: 'Sticker', img: 'img/sticker3.jpg', description: 'Durable, high-quality stickers for products or packaging.' }
+                ]
+            },
+            flyer: {
+                title: 'Flyer',
+                services: [
+                    { title: 'Flyer', img: 'img/flyer.jpg', description: 'Informative flyers ideal for monthly promotions or updates.' },
+                    { title: 'Flyer', img: 'img/flyer2.jpg', description: 'Creative flyer layouts for maximum audience impact.' },
+                    { title: 'Flyer', img: 'img/flyer3.jpg', description: 'Targeted flyer designs tailored to your business goals.' }
+                ]
+            },
+            menu: {
+                title: 'Menu',
+                services: [
+                    { title: 'Menu', img: 'img/sticker2.jpg', description: 'Compact, visually appealing menu for any business type.' },
+                    { title: 'Menu', img: 'img/menu1.jpg', description: 'Elegant and clear menu design for cafes or restaurants.' },
+                    { title: 'Menu', img: 'img/menu2.jpg', description: 'Stylish and functional menu, perfect for fine dining.' },
+                    { title: 'Menu', img: 'img/menu3.jpg', description: 'Creative menu design to highlight your unique offerings.' },
+                    { title: 'Menu', img: 'img/menu4.jpg', description: 'Sleek, user-friendly layout with brand-centric visuals.' },
+                    { title: 'Menu', img: 'img/menu5.jpg', description: 'Clean and colorful menu perfect for casual dining spots.' },
+                    { title: 'Menu', img: 'img/menu6.jpg', description: 'Professionally designed to ensure easy readability.' },
+                    { title: 'Menu', img: 'img/menu7.jpg', description: 'Perfect balance of design and functionality for menus.' },
+                    { title: 'Menu', img: 'img/menu8.jpg', description: 'Bold visuals and organized sections for quick access.' },
+                    { title: 'Menu', img: 'img/menu9.jpg', description: 'Premium look and feel to elevate your menu offerings.' },
+                    { title: 'Menu', img: 'img/menu10.jpg', description: 'Custom-designed to match your brand identity.' }
+                ]
+            },
+            tshirt: {
+                title: 'T-Shirt',
+                services: [
+                    { title: 'T-Shirt', img: 'img/shirt.jpg', description: 'Custom t-shirt design for branding, events, or teams.' }
+                ]
+            },
+            signboard: {
+                title: 'Signboard',
+                services: [
+                    { title: 'Signboard', img: 'img/signboard.jpg', description: 'Bold and professional signage for storefronts.' },
+                    { title: 'Signboard', img: 'img/signboard2.jpg', description: 'Weatherproof designs made to last outdoors.' },
+                    { title: 'Signboard', img: 'img/signboard3.jpg', description: 'High-visibility signboards to attract foot traffic.' },
+                    { title: 'Signboard', img: 'img/signboard4.jpg', description: 'Custom signboard design for any business sector.' },
+                    { title: 'Signboard', img: 'img/signboard5.jpg', description: 'Versatile signage options for indoor and outdoor use.' },
+                    { title: 'Signboard', img: 'img/signboard6.jpg', description: 'Eye-catching graphics to enhance your branding.' },
+                    { title: 'Signboard', img: 'img/signboard7.jpg', description: 'Durable and striking signboards made to impress.' }
+                ]
+            },
+            namecard: {
+                title: 'Namecard',
+                services: [
+                    { title: 'Namecard', img: 'img/namecard.jpg', description: 'Premium business cards that make a lasting impression.' },
+                    { title: 'Namecard', img: 'img/namecard2.jpg', description: 'Elegant and modern designs to reflect your professionalism.' }
+                ]
+            },
+            wallroll: {
+                title: 'Walldrop / Rollup',
+                services: [
+                    { title: 'Walldrop', img: 'img/walldrop.jpg', description: 'Large format prints for events, booths, or promotions.' },
+                    { title: 'Rollup', img: 'img/rollup.jpg', description: 'Portable and sleek roll-up banners for professional use.' }
+                ]
+            },
+            voucher: {
+                title: 'Voucher',
+                services: [
+                    { title: 'Voucher', img: 'img/voucher.jpg', description: 'Custom vouchers for giveaways, discounts, or gifts.' }
+                ]
+            },
+            pinkflavour: {
+                title: 'Pink Flavour',
+                services: [
+                    { title: 'Angpau', img: 'img/angpau1.jpg', description: 'Festive angpau designs for special celebrations.' },
+                    { title: 'Angpau', img: 'img/angpau2.jpg', description: 'Traditional yet creative angpau packets.' },
+                    { title: 'Angpau', img: 'img/angpau3.jpg', description: 'Vibrant angpau designs to celebrate in style.' },
+                    { title: 'Angpau', img: 'img/angpau4.jpg', description: 'Elegant angpau perfect for corporate gifting.' },
+                    { title: 'Calendar', img: 'img/calendar1.jpg', description: 'Functional and attractive calendar design.' },
+                    { title: 'Calendar', img: 'img/calendar2.jpg', description: 'Calendars with clean layout and vivid visuals.' },
+                    { title: 'Calendar', img: 'img/calendar3.jpg', description: 'Custom calendars ideal for promotions and branding.' },
+                    { title: 'Calendar', img: 'img/calendar4.jpg', description: 'Professional calendar designs for year-round visibility.' },
+                    { title: 'Diary', img: 'img/diary1.jpg', description: 'Stylish diary layouts for professionals and students.' },
+                    { title: 'Diary', img: 'img/diary2.jpg', description: 'Hardcover diaries with practical inner page design.' },
+                    { title: 'Diary', img: 'img/diary3.jpg', description: 'Premium diary with customizable cover and pages.' },
+                    { title: 'Executive Note', img: 'img/execnote1.jpg', description: 'Professional notebooks ideal for business meetings.' },
+                    { title: 'Montly Planner', img: 'img/monthlyplan1.jpg', description: 'Organized monthly planner to manage tasks efficiently.' },
+                    { title: 'Notebook', img: 'img/notebook1.jpg', description: 'Versatile notebooks for daily writing or sketching.' },
+                    { title: 'Wirebook', img: 'img/wirebook1.jpg', description: 'Wire-bound notebook with durable cover design.' },
+                    { title: 'Wire Note', img: 'img/wirenote1.jpg', description: 'Practical wire note perfect for school or work use.' }
+                ]
+            },
+            booklet: {
+                title: 'Booklet',
+                services: [
+                    { title: 'Booklet', img: 'img/booklet.jpg', description: 'Custom booklets for catalogs, programs, or guides.' }
+                ]
+            }
+        }
+    }">
+        <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
         
-                    <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/sticker3.jpg">
-                        </div>
+        <!-- Category Selector -->
+        <div class="flex justify-center mb-12">
+            <div class="relative" x-data="{ dropdownOpen: false }">
+                <button 
+                    @click="dropdownOpen = !dropdownOpen"
+                    class="bg-white shadow-md rounded-lg px-6 py-3 flex items-center space-x-2 min-w-64 justify-between hover:shadow-lg transition-shadow">
+                    <span class="font-medium text-gray-800" x-text="categories[activeCategory].title"></span>
+                    <svg class="w-5 h-5 text-gray-500 transition-transform duration-200" 
+                         :class="dropdownOpen ? 'rotate-180' : ''" 
+                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                
+                <div x-show="dropdownOpen" 
+                     @click.away="dropdownOpen = false"
+                     x-transition:enter="transition ease-out duration-200"
+                     x-transition:enter-start="opacity-0 transform scale-95"
+                     x-transition:enter-end="opacity-100 transform scale-100"
+                     x-transition:leave="transition ease-in duration-150"
+                     x-transition:leave-start="opacity-100 transform scale-100"
+                     x-transition:leave-end="opacity-0 transform scale-95"
+                     class="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-xl border z-10 max-h-64 overflow-y-auto">
+                    <template x-for="(category, key) in categories" :key="key">
+                        <button 
+                            @click="activeCategory = key; dropdownOpen = false"
+                            :class="activeCategory === key ? 'bg-blue-50 text-blue-600 border-l-4 border-blue-600' : 'text-gray-700 hover:bg-gray-50'"
+                            class="w-full text-left px-4 py-3 transition-colors duration-150 first:rounded-t-lg last:rounded-b-lg"
+                            x-text="category.title">
+                        </button>
+                    </template>
+                </div>
+            </div>
+        </div>
 
-                        <!-- <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <div class="relative" style="width: 325px; height: 325px;">
-                              <div class="absolute inset-0 flex items-center justify-center bg-white">
-                                <img class="max-w-full max-h-full" src="img/banner5.jpg" alt="Your Image">
-                              </div>
+        <!-- Services Grid -->
+        <template x-for="(category, key) in categories" :key="key">
+            <div x-show="activeCategory === key" x-transition:enter="transition ease-out duration-300" 
+                 x-transition:enter-start="opacity-0 transform translate-y-4" 
+                 x-transition:enter-end="opacity-100 transform translate-y-0">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <template x-for="(service, index) in category.services" :key="service.title + '-' + index">
+                        <div class="bg-white shadow-lg rounded-2xl overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                            <img :src="service.img" :alt="service.title" loading="lazy"
+                                class="preview-img w-full h-64 object-cover cursor-pointer"
+                                @click="imgSrc = service.img; open = true"
+                                onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2" x-text="service.title"></h3>
+                                <p class="text-gray-600 text-sm" x-text="service.description"></p>
                             </div>
-                        </div> -->
-                    </div>
+                        </div>
+                    </template>
                 </div>
             </div>
-            <hr class="mt-3" style="width:100%;text-align:left;margin-left:0; border-color:#202120;">
+        </template>
 
-            <!-- ----------------------------------------------------------- BANNERS ----------------------------------------------------------------------- -->
-            <div x-data="{ dropdownOpen: false }" class="relative w-full z-30 top-0 px-6 py-1">
-                <div class="flex flex-col mt-0 px-2 py-3">
-                    <p 
-                        @click="dropdownOpen = !dropdownOpen" 
-                        class="uppercase font-bold text-gray-800 text-xl flex flex-row justify-between md:justify-start" 
-                        href="#"
-                    >
-                        BANNERS
-                        <svg class="h-5 w-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                    </p>
-                </div>
-                <div x-show="dropdownOpen" x-on:click.stop.outside="open = false" class="flex flex-col servicesContainer">
-                    <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/banner1.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/banner2.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/banner3.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/banner4.jpg">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr class="mt-3" style="width:100%;text-align:left;margin-left:0; border-color:#202120;">
-            
-            <!-- ----------------------------------------------------------- MENU ----------------------------------------------------------------------- -->
-            <div x-data="{ dropdownOpen: false }" class="relative w-full z-30 top-0 px-6 py-1">
-                <div class="flex flex-col mt-0 px-2 py-3">
-                    <p 
-                        @click="dropdownOpen = !dropdownOpen" 
-                        class="uppercase font-bold text-gray-800 text-xl flex flex-row justify-between md:justify-start" 
-                        href="#"
-                    >
-                        MENU
-                        <svg class="h-5 w-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                    </p>
-                </div>
-    
-                <div x-show="dropdownOpen" x-on:click.stop.outside="open = false" class="flex flex-col servicesContainer">
-                    <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/sticker2.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/menu1.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/menu2.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/menu3.jpg">
-                        </div>
-                    </div>
-
-                    <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/menu4.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/menu5.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/menu6.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/menu7.jpg">
-                        </div>
-                    </div>
-
-                    <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/menu8.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/menu9.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/flyer4.jpg">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr class="mt-3" style="width:100%;text-align:left;margin-left:0; border-color:#202120;">
-
-            <!-- ----------------------------------------------------------- T-SHIRT / SIGNBOARD / NAMECARD ----------------------------------------------------------------------- -->
-            <div x-data="{ dropdownOpen: false }" class="relative w-full z-30 top-0 px-6 py-1">
-                <div class="flex flex-col mt-0 px-2 py-3">
-                    <p 
-                        @click="dropdownOpen = !dropdownOpen" 
-                        class="uppercase font-bold text-gray-800 text-xl flex flex-row justify-between md:justify-start" 
-                        href="#"
-                    >
-                        T-SHIRT / SIGNBOARD / NAMECARD
-                        <svg class="h-5 w-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                    </p>
-                </div>
-    
-                <div x-show="dropdownOpen" x-on:click.stop.outside="open = false" class="flex flex-col servicesContainer">
-                    <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/signboard.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/signboard2.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/signboard3.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/signboard4.jpg">
-                        </div>
-                    </div>
-                    
-                    <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/signboard5.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/signboard6.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/signboard7.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/shirt.jpg">
-                        </div>
-                    </div>
-                    
-                    <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/namecard.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/namecard2.jpg">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr class="mt-3" style="width:100%;text-align:left;margin-left:0; border-color:#202120;">
-
-            <!-- ----------------------------------------------------------- WALLDROP / ROLLUP ----------------------------------------------------------------------- -->
-            <div x-data="{ dropdownOpen: false }" class="relative w-full z-30 top-0 px-6 py-1">
-                <div class="flex flex-col mt-0 px-2 py-3">
-                    <p 
-                        @click="dropdownOpen = !dropdownOpen" 
-                        class="uppercase font-bold text-gray-800 text-xl flex flex-row justify-between md:justify-start" 
-                        href="#"
-                    >
-                        WALLDROP / ROLLUP
-                        <svg class="h-5 w-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                    </p>
-                </div>
-    
-                <div x-show="dropdownOpen" x-on:click.stop.outside="open = false" class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row servicesContainer">
-                    <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
-                        <img class="hover:grow hover:shadow-lg" src="img/walldrop.jpg">
-                    </div>
-                    <div class="w-full md:w-1/3 xl:w-1/4 p-6 servicesContainer">
-                        <img class="hover:grow hover:shadow-lg" src="img/rollup.jpg">
-                    </div>
-                </div>
-            </div>
-            <hr class="mt-3" style="width:100%;text-align:left;margin-left:0; border-color:#202120;">
-
-            <!-- ----------------------------------------------------------- VOUCHER ----------------------------------------------------------------------- -->
-            <div x-data="{ dropdownOpen: false }" class="relative w-full z-30 top-0 px-6 py-1">
-                <div class="flex flex-col mt-0 px-2 py-3">
-                    <p 
-                        @click="dropdownOpen = !dropdownOpen" 
-                        class="uppercase font-bold text-gray-800 text-xl flex flex-row justify-between md:justify-start" 
-                        href="#"
-                    >
-                        VOUCHER
-                        <svg class="h-5 w-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                    </p>
-                </div>
-                <div x-show="dropdownOpen" x-on:click.stop.outside="open = false" class="flex flex-col servicesContainer">
-                    <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/voucher.jpg">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr class="mt-3" style="width:100%;text-align:left;margin-left:0; border-color:#202120;">
-
-            <!-- ----------------------------------------------------------- PinkFlavour ----------------------------------------------------------------------- -->
-            <div x-data="{ dropdownOpen: false }" class="relative w-full z-30 top-0 px-6 py-1">
-                <div class="flex flex-col mt-0 px-2 py-3">
-                    <p 
-                        @click="dropdownOpen = !dropdownOpen" 
-                        class="uppercase font-bold text-gray-800 text-xl flex flex-row justify-between md:justify-start" 
-                        href="#"
-                    >
-                        PinkFlavour
-                        <svg class="h-5 w-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                    </p>
-                </div>
-                <div x-show="dropdownOpen" x-on:click.stop.outside="open = false" class="flex flex-col servicesContainer">
-                    <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/angpau1.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/angpau2.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/angpau3.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/angpau4.jpg">
-                        </div>
-                    </div>
-                    <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/calendar1.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/calendar2.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/calendar3.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/calendar4.jpg">
-                        </div>
-                    </div>
-                    <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/diary1.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/diary2.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/diary3.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/execnote1.jpg">
-                        </div>
-                    </div>
-                    <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/monthlyplan1.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/notebook1.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/wirebook1.jpg">
-                        </div>
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/wirenote1.jpg">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr class="mt-3" style="width:100%;text-align:left;margin-left:0; border-color:#202120;">
-
-            <!-- ----------------------------------------------------------- Booklet ----------------------------------------------------------------------- -->
-            <div x-data="{ dropdownOpen: false }" class="relative w-full z-30 top-0 px-6 py-1">
-                <div class="flex flex-col mt-0 px-2 py-3">
-                    <p 
-                        @click="dropdownOpen = !dropdownOpen" 
-                        class="uppercase font-bold text-gray-800 text-xl flex flex-row justify-between md:justify-start" 
-                        href="#"
-                    >
-                        Booklet
-                        <svg class="h-5 w-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                    </p>
-                </div>
-                <div x-show="dropdownOpen" x-on:click.stop.outside="open = false" class="flex flex-col servicesContainer">
-                    <div class="flex space-y-12 md:space-y-0 md:space-x-12 flex-col md:flex-row">
-                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col servicesContainer">
-                            <img class="hover:grow hover:shadow-lg" src="img/booklet.jpg">
-                        </div>
-                    </div>
-                </div>
-            </div>  
+        <div x-show="open" @click="open = false"
+            class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+            <img :src="imgSrc" class="max-w-full max-h-full rounded-lg shadow-lg">
         </div>
     </section>
 
-    <section style="background-color: #DDD0C8">
-        <footer class="container mx-auto py-8 border-t border-gray-400">
-            <div class="container flex px-3 py-8 ">
-                <div class="w-full mx-auto flex flex-wrap">
-                <div class="flex w-full lg:w-1/2 ">
-                    <div class="px-3 md:px-0">
-                        <h3 class="font-bold text-gray-900">Contact us</h3>
-                        <p class="py-1">
-                            <i class="fa-regular fa-comment"></i> +6018 288 8389 / +6012 423 6770
-                        </p>
-                        <p class="py-1">
-                            <i class="fa-regular fa-envelope"></i> ecdesign2print@gmail.com
-                        </p>
-                        <p class="py-1">
-                            <i class="fa-solid fa-location-dot"></i> No.8-1, USJ 9/5Q, Subang Business Centre, 47620 Subang Jaya, Selangor
-                        </p>
-                        <p class="py-2">
-                            <p>&copy; 2023 EC Design 2 Print. All Rights Reserved.</p>
-                        </p>
+    <!-- Video Gallery Section -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Work in Action</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <video class="w-full h-48" controls>
+                        <source src="vid/vid1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-sm">Printing Process</h3>
                     </div>
                 </div>
-                <div class="flex w-full lg:w-1/2 lg:justify-end lg:text-right mt-6 md:mt-0">
-                    <div class="px-3 md:px-0">
-                    <h3 class="text-left font-bold text-gray-900">Social</h3>
-    
-                    <div class="w-full flex items-center py-4 mt-0">
-                        <a href="#" class="mx-2">
-                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path>
-                        </svg>
-                        </a>
-                        <a href="#" class="mx-2">
-                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
-                        </svg>
-                        </a>
-                        <a href="#" class="mx-2">
-                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                            <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"></path>
-                        </svg>
-                        </a>
-                        <a href="#" class="mx-2">
-                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                            <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"></path>
-                        </svg>
-                        </a>
-                    </div>
+                <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <video class="w-full h-48" controls>
+                        <source src="vid/vid3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-sm">Printing Process</h3>
                     </div>
                 </div>
+                <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <video class="w-full h-48" controls>
+                        <source src="vid/vid4.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-sm">Printing Process</h3>
+                    </div>
+                </div>
+                <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <video class="w-full h-48" controls>
+                        <source src="vid/vid5.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-sm">Printing Process</h3>
+                    </div>
+                </div>
+                <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <video class="w-full h-48" controls>
+                        <source src="vid/vid6.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-sm">Installation Process</h3>
+                    </div>
                 </div>
             </div>
-        </footer>
+        </div>
     </section>
-    
+
+    <!-- About Us Section -->
+    <section class="bg-gray-50 py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg">
+                    <video class="w-full h-80" controls>
+                        <source src="vid/vid2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-bold">About Our Company</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        At <b>ECDesign2Print</b>, we are passionate about transforming your ideas into vibrant prints and bringing your visions to life. As a leading provider of printing solutions, we specialize in delivering top-notch services tailored to meet your diverse needs.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Your satisfaction is our priority. We are committed to not only meeting but exceeding your expectations, ensuring a seamless and enjoyable experience throughout your printing journey with us.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-blue-600">200+</div>
+                            <div class="text-sm text-gray-600">Printing Solutions Provided</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-blue-600">2+</div>
+                            <div class="text-sm text-gray-600">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Services List Section -->
+    <section class="bg-blue-50 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Complete Services List</h2>
+            
+            <!-- Main Services -->
+            <div class="mb-12">
+                <h3 class="text-xl font-semibold text-center mb-6 text-blue-600">Our Main Services</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                    <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                        <div class="flex flex-col items-center space-y-3">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 0h10m-10 0a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2"></path>
+                            </svg>
+                            <span class="text-xl font-bold">Signboard</span>
+                        </div>
+                        <p class="text-center mt-3 text-blue-100">Professional signboard solutions</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-green-600 to-green-700 text-white rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                        <div class="flex flex-col items-center space-y-3">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            <span class="text-xl font-bold">Banner</span>
+                        </div>
+                        <p class="text-center mt-3 text-green-100">Eye-catching banner designs</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                        <div class="flex flex-col items-center space-y-3">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                            </svg>
+                            <span class="text-xl font-bold">Sticker</span>
+                        </div>
+                        <p class="text-center mt-3 text-purple-100">Custom sticker printing</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                        <div class="flex flex-col items-center space-y-3">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 0h10m-10 0a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2"></path>
+                            </svg>
+                            <span class="text-xl font-bold">Postal</span>
+                        </div>
+                        <p class="text-center mt-3 text-blue-100">Professional postal solutions</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Services -->
+            <div>
+                <h3 class="text-xl font-semibold text-center mb-6 text-gray-700">Additional Services</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                    <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow text-center border-l-4 border-gray-300">
+                        <span class="font-medium text-gray-800">Rubber Stamp</span>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow text-center border-l-4 border-gray-300">
+                        <span class="font-medium text-gray-800">Invitation Card</span>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow text-center border-l-4 border-gray-300">
+                        <span class="font-medium text-gray-800">Cash Bills</span>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow text-center border-l-4 border-gray-300">
+                        <span class="font-medium text-gray-800">Comb Binding</span>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow text-center border-l-4 border-gray-300">
+                        <span class="font-medium text-gray-800">Letterhead</span>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow text-center border-l-4 border-gray-300">
+                        <span class="font-medium text-gray-800">Nametag</span>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow text-center border-l-4 border-gray-300">
+                        <span class="font-medium text-gray-800">Uniform</span>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow text-center border-l-4 border-gray-300">
+                        <span class="font-medium text-gray-800">Laminate</span>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow text-center border-l-4 border-gray-300">
+                        <span class="font-medium text-gray-800">Staple</span>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow text-center border-l-4 border-gray-300">
+                        <span class="font-medium text-gray-800">Perfect Binding</span>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow text-center border-l-4 border-gray-300">
+                        <span class="font-medium text-gray-800">Paper Bag</span>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow text-center border-l-4 border-gray-300">
+                        <span class="font-medium text-gray-800">Envelope</span>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow text-center border-l-4 border-gray-300">
+                        <span class="font-medium text-gray-800">Hard Cover</span>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow text-center border-l-4 border-gray-300">
+                        <span class="font-medium text-gray-800">Photostat</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t py-12 justify-center">
+        <div class="container mx-auto px-4 text-center">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- Contact Information -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-lg font-semibold mb-4 text-gray-800">Contact Information</h3>
+                    <div class="space-y-3 text-gray-600">
+                        <div class="flex items-center justify-center md:justify-start space-x-3">
+                            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span>No.8-1, USJ 9/5Q, Subang Business Centre, 47620 Subang Jaya, Selangor</span>
+                        </div>
+                        <div class="flex items-center justify-center md:justify-start space-x-3">
+                            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span>+6018 288 8389 / +6012 423 6770</span>
+                        </div>
+                        <div class="flex items-center justify-center md:justify-start space-x-3">
+                            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>ecdesign2print@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Hours -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-lg font-semibold mb-4 text-gray-800">Business Hours</h3>
+                    <div class="space-y-2 text-gray-600">
+                        <div class="flex justify-center md:justify-start">
+                            <span class="w-20">Mon-Fri:</span>
+                            <span>9:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="flex justify-center md:justify-start">
+                            <span class="w-20">Saturday:</span>
+                            <span>9:00 AM - 3:00 PM</span>
+                        </div>
+                        <div class="flex justify-center md:justify-start">
+                            <span class="w-20">Sunday:</span>
+                            <span>Closed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t pt-6 text-center text-gray-600">
+                <p>© 2023 EC Design 2 Print. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            function c() {
+                var b = a.contentDocument || a.contentWindow.document;
+                if (b) {
+                    var d = b.createElement('script');
+                    d.innerHTML = `
+                        window.__CF$cv$params = {
+                            r: '98c613d512d9ff83',
+                            t: 'MTc2MDA5ODg4Ni4wMDAwMDA='
+                        };
+                        var a = document.createElement('script');
+                        a.nonce = '';
+                        a.src = '/cdn-cgi/challenge-platform/scripts/jsd/main.js';
+                        document.getElementsByTagName('head')[0].appendChild(a);
+                    `;
+                    b.getElementsByTagName('head')[0].appendChild(d);
+                }
+            }
+
+            if (document.body) {
+                var a = document.createElement('iframe');
+                a.height = 1;
+                a.width = 1;
+                a.style.position = 'absolute';
+                a.style.top = 0;
+                a.style.left = 0;
+                a.style.border = 'none';
+                a.style.visibility = 'hidden';
+                document.body.appendChild(a);
+
+                if (document.readyState !== 'loading') {
+                    c();
+                } else if (window.addEventListener) {
+                    document.addEventListener('DOMContentLoaded', c);
+                } else {
+                    var e = document.onreadystatechange || function () { };
+                    document.onreadystatechange = function (b) {
+                        e(b);
+                        if (document.readyState !== 'loading') {
+                            document.onreadystatechange = e;
+                            c();
+                        }
+                    };
+                }
+            }
+        })();
+    </script>
 </body>
-
-<script>
-    const scrollButton = document.getElementById("viewServiceBtn");
-    const navbarScrollButton = document.getElementById("viewServiceBtnFromNavbar");
-    const targetSection = document.getElementById("serviceSection");
-
-    scrollButton.addEventListener("click", () => {
-        targetSection.scrollIntoView({ behavior: "smooth" });
-    });
-
-    navbarScrollButton.addEventListener("click", () => {
-        targetSection.scrollIntoView({ behavior: "smooth" });
-    });
-</script>
 </html>
